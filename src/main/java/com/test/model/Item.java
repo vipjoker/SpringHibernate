@@ -17,6 +17,17 @@ public class Item {
     private String description;
     private String state;
 
+
+    public Item(){}
+
+    public Item(String name,String description){
+        this.name = name;
+        this.description = description;
+    }
+
+
+
+
     public long getId() {
         return id;
     }

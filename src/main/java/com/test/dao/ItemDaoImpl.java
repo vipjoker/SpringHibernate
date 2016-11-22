@@ -1,14 +1,13 @@
 package com.test.dao;
 
 import com.test.model.Item;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -51,7 +50,7 @@ public class ItemDaoImpl implements ItemDao {
 
         EntityManager em = this.entityManager.createEntityManager();
         Query query = em.createQuery("Select b from Item b");
-        List <Item> items= query.getResultList();
+        List<Item> items = query.getResultList();
         List<Item> items2 = Arrays.asList(
                 new Item("Oleh", "dev"),
                 new Item("Ivan", "slesar"),
@@ -62,7 +61,7 @@ public class ItemDaoImpl implements ItemDao {
 
 
         logger.info("entity manager " + items);
-        return items == null ? items2:items;
+        return items == null ? items2 : items;
     }
 
     public Item getItemById(long id) {

@@ -53,7 +53,7 @@ public class SimpleController {
         mService.addItem(item);
         List<Item> items = mService.listItems();
         model.addAttribute("items",items);
-        return "home";
+        return "redirect:/";
     }
 
     @GetMapping("/create" )

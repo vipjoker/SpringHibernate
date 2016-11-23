@@ -23,6 +23,7 @@
         <table class="highlight">
             <c:forEach items="${items}" var="item">
                 <tr>
+                    <td><a href="${item.id}/messages" >${item.id} </a></td>
                     <td><c:out value="${item.name}"/></td>
                     <td><c:out value="${item.description}"/></td>
                 </tr>

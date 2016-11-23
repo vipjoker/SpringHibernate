@@ -1,17 +1,13 @@
 package com.test.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.test.model.Item;
 import com.test.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.FormParam;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -22,14 +18,14 @@ import java.util.logging.Logger;
  */
 
 @Controller
-public class SimpleController {
+public class UsersController {
     @Autowired
     private ApplicationContext appContext;
     @Autowired
     private ItemService mService;
 
 
-    Logger logger = Logger.getLogger(SimpleController.class.getName());
+    Logger logger = Logger.getLogger(UsersController.class.getName());
 
 
     @RequestMapping(value="/" , method = RequestMethod.GET)
@@ -70,15 +66,6 @@ public class SimpleController {
         return "home";
     }
 
-    @RequestMapping(value = "item/{id}")
-    public String getItemById(@PathVariable("id") long id ,Model model){
-        model.addAttribute("serverTime","Get item by id = " + id);
-        return "home";
-    }
 
-    @GetMapping("/{userId}/messages")
-    public String getMessagesById(Model model,@PathVariable("userId")String userId){
-        return "messages";
-    }
 
 }

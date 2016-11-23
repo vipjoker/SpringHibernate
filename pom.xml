@@ -70,4 +70,18 @@
         <version>4.3.5.Final</version>
     </dependency>
 </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warName>messages</warName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

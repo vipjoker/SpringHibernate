@@ -17,6 +17,8 @@ public class Item {
     private String name;
     private String description;
     private String state;
+
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Message> messageList;
 
 

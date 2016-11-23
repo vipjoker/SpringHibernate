@@ -1,6 +1,7 @@
 package com.test.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by omakhobei on 11/14/2016.
@@ -16,7 +17,16 @@ public class Item {
     private String name;
     private String description;
     private String state;
+    private List<Message> messageList;
 
+
+    public List<Message> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<Message> messageList) {
+        this.messageList = messageList;
+    }
 
     public Item(){}
 

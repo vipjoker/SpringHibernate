@@ -1,0 +1,26 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.listItem{
+    color:#05521f;
+    padding:15px;
+    background-color:#e4ffd8;
+    border-bottom: 1px solid #b3ff4c;
+    list-style: none;
+}
+
+
+.listItem:hover{
+    background-color:#f8ffa2;
+    transform: translate(10,0);
+        
+}
+
+ul{
+    padding: 0;
+}

@@ -30,10 +30,7 @@ public class SimpleController {
 
 
     Logger logger = Logger.getLogger(SimpleController.class.getName());
-//    @Autowired(required = true)
-//    public void setItemService(ItemService service){
-//        this.mService = service;
-//    }
+
 
     @RequestMapping(value="/" , method = RequestMethod.GET)
     public String helloWorld(Model model){
@@ -66,27 +63,22 @@ public class SimpleController {
 
 
 
+
     @RequestMapping(value = "/items",method = RequestMethod.GET)
     public String getAllItems(Model model){
         model.addAttribute("serverTime" ,"Items list works ");
-
-
-
         return "home";
-//        return mService.listItems();
     }
-
-
-
 
     @RequestMapping(value = "item/{id}")
     public String getItemById(@PathVariable("id") long id ,Model model){
-//        mService.getItemById(id);
-
         model.addAttribute("serverTime","Get item by id = " + id);
         return "home";
     }
 
-
+    @GetMapping("/{userId}/messages")
+    public String getMessagesById(Model model,@PathVariable("userId")String userId){
+        return "messages";
+    }
 
 }
